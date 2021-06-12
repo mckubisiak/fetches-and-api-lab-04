@@ -20,16 +20,23 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 1em;
-  margin-bottom: 1em;
+  font-size: 4em;
+  padding: .4em;
+}
+
+.header-text {
+  letter-spacing: 0.2em;
+  font-family: 'Bangers', cursive;
+  text-shadow: -1px 0 rgb(42, 117, 187), 0 1px rgb(42, 117, 187), 3px 0 rgb(42, 117, 187), 0 -3px rgb(42, 117, 187), -1px 0 rgb(42, 117, 187), 0 1px rgb(42, 117, 187), 3px 0 rgb(42, 117, 187), 0 -3px rgb(42, 117, 187);
+  color: rgba(255, 204, 5, 1);
+
 }
 
 h1 {
   font-size: 1em;
   border-radius: 1px 25px;
   background-color: rgba(0, 0, 0, 0.8);
+  color: rgba(255, 204, 5, 1);
 
 }
 
