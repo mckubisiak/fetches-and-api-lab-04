@@ -57,7 +57,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='main-background'>
         <Header />
         <Search handleSearch={this.handleSearchChange} handleClick={this.handleClick} />
         <Sort sortOrder={this.handleOrderChange} sortCategory={this.handleCategoryChange} />
