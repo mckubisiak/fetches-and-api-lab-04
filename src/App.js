@@ -20,12 +20,10 @@ export default class App extends Component {
 
   handleOrderChange = async (e) => {
     this.setState({ sortOrder: e.target.value })
-    await this.fetchPokeApi();
   }
 
   handleCategoryChange = async (e) => {
     this.setState({ setCategory: e.target.value })
-    await this.fetchPokeApi();
   }
 
   handleSearchChange = (e) => {
@@ -34,39 +32,30 @@ export default class App extends Component {
 
   componentDidMount = async () => { 
     await this.fetchPokeApi();
-    
   }
 
   handleClick = async () => { 
     await this.fetchPokeApi();
   }
 
-  
 
   fetchPokeApi = async () => {
-    console.log(this.state)
     this.setState({ loading: true});
     
     const URL = this.state.sortOrder
     ? `https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=${this.state.setCategory}&direction=${this.state.sortOrder}`
     : 'https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=';
-
-
+    
     await loadDelay(3000)
     
     const data = await request.get(URL)
     
     this.setState({ loading: false });
     this.setState({ pokeApi: data.body.results });
-    
-    console.log(URL)
   }
 
 
   render() {
-    console.log(this.state.sortOrder)
-    // console.log(this.state.setCategory)
-
     return (
       <div>
         <Header />
