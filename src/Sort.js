@@ -20,7 +20,7 @@ export default class Sort extends Component {
                             <option value=" "> No category </option>
                             <option value="id"> Pokemon # </option>
                             <option value="height"> height </option>
-                            <option value="weight"> weight </option>
+                            <option value="speed"> speed </option>
                             <option value="weight"> weight </option>
                             <option value="type_1"> primary type </option>
                             <option value="type_2"> secondary type </option>
