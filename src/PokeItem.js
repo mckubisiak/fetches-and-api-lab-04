@@ -9,17 +9,21 @@ export default class PokeItem extends Component {
         const Div = styled.div`
         background-color: ${this.props.data.color_1};
         color: ${this.props.data.color_2};
-        border-radius: 25px;
+        border: solid .2em black;
+        border-inline: .8em solid ${this.props.data.color_1};
         `
 
         const color = this.props.data.color_f;
-        console.log(color);
+
         
         return (
             <Div className='pokemon-divs'>
                 
-                <h1 color={color}> {this.props.data.pokemon} </h1>#{this.props.data.id}
+                <h1 color={color}> {this.props.data.pokemon} </h1> 
                 <img src={this.props.data.url_image} alt={this.props.data.pokemon} />
+                <p className='poke-number'> #{this.props.data.id}</p>
+                <p className='primary-type'>Type: {this.props.data.type_1} </p>
+                <p className='speed'>Speed: {this.props.data.speed} </p>
             </Div>
         )
     }
