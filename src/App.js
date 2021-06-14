@@ -1,4 +1,5 @@
 import Header from './Header';
+import Footer from './Footer';
 import Sort from './Sort';
 import PokeList from './PokeList';
 import './App.css';
@@ -62,6 +63,7 @@ export default class App extends Component {
         <Search handleSearch={this.handleSearchChange} handleClick={this.handleClick} />
         <Sort sortOrder={this.handleOrderChange} sortCategory={this.handleCategoryChange} />
         <PokeList pokemon={this.state.pokeApi} />
+        <Footer />
       </div>
     )
   }

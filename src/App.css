@@ -8,12 +8,17 @@ html {
   background-image: url("./seemless-pokeballs.jpg");
 }
 
+.test {
+  background-color: #272d3a;
+
+}
+
 img {
   width: 100px;
 }
 
 header {
-  background-color: #282c34;
+  background-color: #272d3a;
   height: var(--header-height);
   box-shadow: var(--shadow);
   display: flex;
@@ -21,7 +26,49 @@ header {
   align-items: center;
   justify-content: center;
   font-size: 4em;
-  padding: .4em;
+}
+
+.spoiler {
+  
+  display: flex;
+  align-self: flex-end;
+  text-align: end;
+  font-size: .5em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+footer {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+    letter-spacing: 0.2em;
+  font-family: 'Bangers', cursive;
+  text-shadow: -1px 0 rgb(42, 117, 187), 0 1px rgb(42, 117, 187), 3px 0 rgb(42, 117, 187), 0 -3px rgb(42, 117, 187), -1px 0 rgb(42, 117, 187), 0 1px rgb(42, 117, 187), 3px 0 rgb(42, 117, 187), 0 -3px rgb(42, 117, 187);
+  color: rgba(255, 204, 5, 1);
+  margin: auto;
+  
+}
+
+
+.vibrate-1 {
+  height: 1em;
+  width: auto;
+  padding-right: .4em;
+}
+
+.vibrate-1:hover {
+  -webkit-animation: vibrate-1 0.5s linear infinite both;
+  animation: vibrate-1 0.5s linear infinite both;
+
+}
+
+
+
+
+.footer-text {
+  font-size: 3rem;
+  padding-right: .4em;
 }
 
 .header-text {
@@ -29,7 +76,6 @@ header {
   font-family: 'Bangers', cursive;
   text-shadow: -1px 0 rgb(42, 117, 187), 0 1px rgb(42, 117, 187), 3px 0 rgb(42, 117, 187), 0 -3px rgb(42, 117, 187), -1px 0 rgb(42, 117, 187), 0 1px rgb(42, 117, 187), 3px 0 rgb(42, 117, 187), 0 -3px rgb(42, 117, 187);
   color: rgba(255, 204, 5, 1);
-
 }
 
 h1 {
@@ -158,5 +204,58 @@ div {
   75% {
     -webkit-transform: translateX(-6px) rotate(-1.2deg);
             transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+
+ @-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
 }
