@@ -1,70 +1,27 @@
-import Header from './Header';
-import Footer from './Footer';
-import Sort from './Sort';
-import PokeList from './PokeList';
-import './App.css';
-import request from 'superagent';
 import React, { Component } from 'react'
-import Search from './Search';
-
-
-const loadDelay = (time) => new Promise((res, rej) => setTimeout(() => { res() }, time))
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Header from './Header';
+import Home from './Home';
+import Footer from './Footer';
+import PokeIndex from './PokeIndex';
+import PokeItem from './PokeItem';
 
 export default class App extends Component {
-  state = {
-    sortOrder: '',
-    query: '',
-    pokeApi: [],
-    loading: false,
-    setCategory: ''
-  }
+    render() {
+        return (
+            <div>
+                <BrowserRouter>
+                    <Header />
+                
+                    <Switch>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/pokedex" exact component={PokeIndex} />
+                        <Route path="/pokedex/:id" exact component={PokeItem} />
 
-  handleOrderChange = async (e) => {
-    this.setState({ sortOrder: e.target.value })
-  }
-
-  handleCategoryChange = async (e) => {
-    this.setState({ setCategory: e.target.value })
-  }
-
-  handleSearchChange = (e) => {
-  this.setState({ query: e.target.value })
-  }
-
-  componentDidMount = async () => { 
-    await this.fetchPokeApi();
-  }
-
-  handleClick = async () => { 
-    await this.fetchPokeApi();
-  }
-
-
-  fetchPokeApi = async () => {
-    this.setState({ loading: true});
-    
-    const URL = this.state.sortOrder
-    ? `https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=${this.state.setCategory}&direction=${this.state.sortOrder}`
-    : 'https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=';
-    
-    await loadDelay(3000)
-    
-    const data = await request.get(URL)
-    
-    this.setState({ loading: false });
-    this.setState({ pokeApi: data.body.results });
-  }
-
-
-  render() {
-    return (
-      <div className='main-background'>
-        <Header />
-        <Search handleSearch={this.handleSearchChange} handleClick={this.handleClick} />
-        <Sort sortOrder={this.handleOrderChange} sortCategory={this.handleCategoryChange} />
-        <PokeList pokemon={this.state.pokeApi} />
-        <Footer />
-      </div>
-    )
-  }
+                    </Switch>
+                    <Footer />
+                </BrowserRouter>
+            </div>
+        )
+    }
 }

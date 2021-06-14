@@ -28,6 +28,10 @@ header {
   font-size: 4em;
 }
 
+.home-page {
+  color: black;
+}
+
 .spoiler {
   
   display: flex;
