@@ -37,7 +37,7 @@ export default class Footer extends Component {
 
         return (
             <footer className='footer-text'>
-                <img className='vibrate-1' src={transPokeball} onMouseOver={this.rick} alt='trans flag pokeball'/>Alcisiak Code Lab            
+                <img className='vibrate-1' src={transPokeball} onClick={this.rick} alt='trans flag pokeball'/>Alcisiak Code Lab            
             </footer>
         )
     }
