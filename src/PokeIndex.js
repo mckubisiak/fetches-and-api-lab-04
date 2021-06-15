@@ -13,7 +13,8 @@ export default class PokeIndex extends Component {
     query: '',
     pokeApi: [],
     loading: false,
-    setCategory: ''
+    setCategory: '',
+    page: 1,
   }
 
   handleOrderChange = async (e) => {
@@ -36,6 +37,15 @@ export default class PokeIndex extends Component {
     await this.fetchPokeApi();
   }
 
+nextPage = async (e) => {
+  await this.setState({page: this.state.page + 1});
+  this.fetchPokeApi();
+}
+
+previousPage = async (e) => {
+  await this.setState({page: this.state.page - 1});
+  this.fetchPokeApi();
+}
 
   fetchPokeApi = async () => {
     this.setState({ loading: true});

@@ -4,7 +4,7 @@ import Header from './Header';
 import Home from './Home';
 import Footer from './Footer';
 import PokeIndex from './PokeIndex';
-import PokeItem from './PokeItem';
+import PokeDetails from './PokeDetails';
 
 export default class App extends Component {
     render() {
@@ -16,7 +16,7 @@ export default class App extends Component {
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/pokedex" exact component={PokeIndex} />
-                        <Route path="/pokedex/:id" exact component={PokeItem} />
+                        <Route path="/pokedex/:pokeId" exact component={PokeDetails} />
 
                     </Switch>
                     <Footer />
