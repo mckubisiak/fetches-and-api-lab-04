@@ -9,19 +9,19 @@ import PokeDetails from './PokeDetails';
 export default class App extends Component {
     render() {
         return (
-            <div>
                 <BrowserRouter>
+            <div>
                     <Header />
                 
                     <Switch>
-                        <Route path="/" exact component={Home} />
-                        <Route path="/pokedex" exact component={PokeIndex} />
                         <Route path="/pokedex/:pokeId" exact component={PokeDetails} />
+                        <Route path="/pokedex" exact component={PokeIndex} />
+                        <Route path="/" exact component={Home} />
 
                     </Switch>
                     <Footer />
-                </BrowserRouter>
             </div>
+                </BrowserRouter>
         )
     }
 }

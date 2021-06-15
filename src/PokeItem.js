@@ -20,7 +20,7 @@ export default class PokeItem extends Component {
             <Div className='pokemon-divs'>
                 
                 <h1 color={color}> {this.props.data.pokemon} </h1> 
-                <Link to={`/pokemon/${this.props.data._id}`}>
+                <Link to={`/pokedex/${this.props.data._id}`}>
                     <img className='wobble-hor-bottom' src={this.props.data.url_image} alt={this.props.data.pokemon} />
                 </Link>
                 <p className='poke-number'> #{this.props.data.id}</p>

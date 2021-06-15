@@ -1,47 +1,63 @@
 import { Component } from 'react';
 import request from 'superagent';
+import styled from 'styled-components'
 
-// const loadDelay = (time) => new Promise((res, rej) => setTimeout(() => { res() }, time))
 
 export default class PokeDetails extends Component {
     state = {
-        pokeDetail: {},
+        pokeDetails: {},
         loading: false,
     };
+
+
     componentDidMount() {
-        this.fetchDetail();
+        this.fetchDetails();
     }
 
-    fetchDetail = async () => {
+
+    fetchDetails = async () => {
         this.setState({ loading: true });
-        // https://pokedex-alchemy.herokuapp.com/api/pokedex/<pokeId>
-        const uniqueId = this.props.match.params.pokeId;
+
+
+        const apiId = this.props.match.params.pokeId;
+
+
         const data = await request.get(
-            `https://pokedex-alchemy.herokuapp.com/api/pokedex/${uniqueId}`
+            `https://pokedex-alchemy.herokuapp.com/api/pokedex/${apiId}`
         );
-        console.log(data.body);
-        this.setState({ pokeDetail: data.body });
+
+
+        this.setState({ pokeDetails: data.body });
         this.setState({ loading: false });
     };
-    render() {
-        return (
-            <div>
-                {this.state.loading && <h1>Loading!</h1>}
-                {!this.state.loading && (
-                    <>
-                        <h2>Welcome to Poke Details Page</h2>
-                        <h3>{this.props.match.params.pokeId}</h3>
 
-                        <h3>{this.state.pokeDetail.pokemon}</h3>
-                    </>
-                )}
-            </div>
+
+
+
+    render() {
+
+
+        const Div = styled.div`
+        background-color: ${this.state.pokeDetails.color_1};
+        color: ${this.state.pokeDetails.color_2};
+        border: solid .2em ${this.state.pokeDetails.color_1};
+        border-inline: .8em solid ${this.state.pokeDetails.color_1};
+        `
+
+        const color = this.state.pokeDetails.color_1;
+
+
+        return (
+            <Div className='pokemon-divs'>
+                <h1 color={color}>{this.state.pokeDetails.pokemon}</h1>
+                <img className='wobble-hor-bottom' src={this.state.pokeDetails.url_image} alt={this.state.pokeDetails.pokemon} />
+                <p className='poke-number'> #{this.state.pokeDetails.id}</p>
+                <p className='primary-type'>Type: {this.state.pokeDetails.type_1} </p>
+                <p className='speed'>Speed: {this.state.pokeDetails.speed} </p>
+            </Div>
         );
     }
 }
-
-
-
 
 
 
