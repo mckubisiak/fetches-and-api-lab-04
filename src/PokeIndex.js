@@ -69,6 +69,14 @@ previousPage = async (e) => {
           <Search handleSearch={this.handleSearchChange} handleClick={this.handleClick} />
           <Sort sortOrder={this.handleOrderChange} sortCategory={this.handleCategoryChange} />
           <PokeList pokemon={this.state.pokeApi} />
+          {this.state.page - 1 > 0 && (
+                    <button onClick={this.prevPage}>
+                        Prev Page ({this.state.page - 1})
+                    </button>
+                )}
+                <button onClick={this.nextPage}>
+                    Next Page ({this.state.page + 1})
+                </button>
         </div>
     )
   }

@@ -41,7 +41,7 @@ export default class PokeDetails extends Component {
         background-color: ${this.state.pokeDetails.color_1};
         color: ${this.state.pokeDetails.color_2};
         border: solid .2em ${this.state.pokeDetails.color_1};
-        border-inline: .8em solid ${this.state.pokeDetails.color_1};
+        border-inline: .8em solid ${this.state.pokeDetailgacs.color_1};
         `
 
         const color = this.state.pokeDetails.color_1;
